@@ -67,12 +67,12 @@ function contactCard(lang, from) {
 }
 
 function responsiveImage(from, name, width, height, alt, sizes, eager = false) {
-  return `<img src="${asset(from, name + '-800.webp')}" srcset="${asset(from, name + '-480.webp')} 480w, ${asset(from, name + '-800.webp')} 800w, ${asset(from, name + '-1600.webp')} 1600w" sizes="${sizes}" width="${width}" height="${height}" alt="${escape(alt)}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+  return `<img src="${asset(from, name + '-800.webp')}" srcset="${asset(from, name + '-480.webp')} 480w, ${asset(from, name + '-800.webp')} 800w, ${asset(from, name + '-' + width + '.webp')} ${width}w" sizes="${sizes}" width="${width}" height="${height}" alt="${escape(alt)}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
 }
 
 function photo(lang, from, name, width, height, alt, caption, classes = '', eager = false) {
   const image = responsiveImage(from, name, width, height, alt, classes.includes('wide') ? '(max-width: 800px) 100vw, 1360px' : '(max-width: 800px) 100vw, 600px', eager);
-  return `<figure class="photograph ${classes}">${classes.includes('hero-photo') ? `<div class="photo-frame">${image}</div>` : image}<figcaption>${caption}</figcaption></figure>`;
+  return `<figure class="photograph ${classes}">${image}<figcaption>${caption}</figcaption></figure>`;
 }
 
 function serviceList(lang, from, detailed = false) {
@@ -113,8 +113,8 @@ function home(lang, from) {
     <p class="eyebrow">Energoizgradnja d.o.o.</p>
     <h1 id="hero-heading">${tr(lang, 'Remont, ispitivanje i održavanje transformatora.', 'Transformer repair, testing and maintenance.')}</h1>
     <p class="hero-lead">${tr(lang, 'Remont energetskih i specijalnih transformatora do 35 kV. Zamenski transformatori i stanice uz sopstvenu logistiku i vozila.', 'Repair of power and special-purpose transformers up to 35 kV. Replacement transformers and substations with our own logistics and vehicles.')}</p>
-    <div class="actions"><a class="button" href="#usluge">${tr(lang, 'Pogledajte usluge', 'Explore services')}</a></div>
-  </div>${photo(lang, from, 'namotaji-transformatora', 1600, 1200, tr(lang, 'Tri namotaja aktivnog dela transformatora u radionici.', 'Three winding assemblies of a transformer active part in the workshop.'), tr(lang, 'Aktivni deo transformatora u radionici.', 'Transformer active part in the workshop.'), 'hero-photo', true)}</div></section>
+    <div class="actions"><a class="button" href="${href(from, 'services', lang)}">${tr(lang, 'Pogledajte usluge', 'Explore services')}</a></div>
+  </div>${photo(lang, from, 'pocetna-transformator', 1448, 1086, tr(lang, 'Frontalni prikaz aktivnog dela transformatora sa tri namotaja u radionici.', 'Front view of a transformer active part with three windings in the workshop.'), tr(lang, 'Aktivni deo transformatora u radionici (obrađena fotografija).', 'Transformer active part in the workshop (edited photograph).'), 'hero-photo', true)}</div></section>
   <section class="section home-services" id="usluge"><div class="wrap"><header class="section-heading"><h2>${tr(lang, 'Naše usluge', 'Our services')}</h2></header>${serviceList(lang, from)}</div></section>
   <section class="replacement-feature"><div class="wrap"><div><p class="eyebrow">${tr(lang, 'Tokom remonta', 'During repair')}</p><h2>${tr(lang, 'Vaš transformator u radionici.<br>Zamenski na vašoj lokaciji.', 'Your transformer in the workshop.<br>A replacement at your site.')}</h2><p>${tr(lang, 'Prilikom preuzimanja vašeg transformatora dovozimo zamenski i privremeno ga postavljamo.', 'When collecting your transformer, we deliver and temporarily install a replacement.')}</p><p>${tr(lang, 'Moguće je koristiti i zamenske kompletne transformatorske stanice koje povezujemo na vaše napajanje i potrošače.', 'You can also use complete replacement substations, which we connect to your supply and loads.')}</p><a class="text-link" href="${href(from, 'replacement', lang)}">${tr(lang, 'Zamenski transformatori i logistika', 'Replacement transformers and logistics')}</a></div>${replacementDiagram(lang)}</div></section>
   ${workExamples(lang, from)}
@@ -123,7 +123,7 @@ function home(lang, from) {
 
 function workExamples(lang, from) {
   const examples = [
-    { id: 'repair', image: 'aktivni-deo-transformatora', caption: ['Aktivni deo transformatora', 'Transformer active part'], alt: ['Aktivni deo transformatora sa vidljivim namotajima u radionici.', 'Transformer active part with visible windings in the workshop.'], link: ['Remont transformatora', 'Transformer repair'] },
+    { id: 'repair', image: 'detalj-bakarnih-namotaja', caption: ['Detalj bakarnih namotaja', 'Copper winding detail'], alt: ['Krupni plan bakarnih namotaja i izolacionih odstojnika.', 'Close view of copper windings and insulating spacers.'], link: ['Remont transformatora', 'Transformer repair'] },
     { id: 'testing', image: 'terensko-ispitivanje', caption: ['Merni uređaj i ispitni kablovi', 'Measuring equipment and test leads'], alt: ['Merni uređaj i priključeni ispitni kablovi.', 'Measuring instrument and connected test leads.'], link: ['Merenja i ispitivanja', 'Measurements and testing'] },
     { id: 'replacement', image: 'dostava-zamenskog-transformatora', caption: ['Transformator na platformi kamiona', 'Transformer on a truck platform'], alt: ['Kamion Energoizgradnje sa transformatorom na platformi.', 'Energoizgradnja truck carrying a transformer.'], link: ['Zamenski transformatori i logistika', 'Replacement transformers and logistics'] },
   ];

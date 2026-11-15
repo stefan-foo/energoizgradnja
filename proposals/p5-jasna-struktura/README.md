@@ -99,9 +99,10 @@ This builds 28 content pages plus a 404 document under `dist/` and the standalon
 preview. The standalone preview needs JavaScript for navigation. Ordinary static
 pages retain readable content and native navigation without JavaScript.
 
-Source photographs: `1793837756519.jpg` (hero windings), `1793837755965.jpg`
-(workshop), `1793836992772.jpg` (testing), `1793836622709.jpg` (transport).
-WebP derivatives use 480/800/1600-pixel widths. The share image is JPEG.
+Source photographs: `1793837756519.jpg` (sharing image), `1793837755965.jpg`
+(workshop and the source of the homepage retouch), `1793836992772.jpg` (testing),
+and `1793836622709.jpg` (transport). WebP derivatives use 480/800/1600-pixel
+widths, with a 1448-pixel full-size homepage image. The share image is JPEG.
 Original logo and vCard are reused. Source documents are excluded from exports.
 
 ## Production export
@@ -248,11 +249,13 @@ engineering note is kept here, outside the customer-facing design.
 
 ## Gallery and contact refinement, 2026-11-15
 
-- **Design 10: Visible hero framing.** The original photograph now sits in a clipped
-  frame with 12% magnification, a 3.5% left shift, a 1% upward shift and a 1.1-degree
-  counterclockwise rotation. This recenters the winding assembly and levels its
-  lower support without generating new equipment details or changing perspective.
-  The same framing is included in the standalone preview.
+- **Design 10: Homepage framing.** The homepage uses the selected first ImageGen
+  edit of the supplied frontal workshop photograph. The edit adjusts perspective,
+  framing and tones. The optimised `pocetna-transformator` WebP files use the
+  native 4:3 frame at 480, 800 and 1448 pixels wide. The locally retained source
+  is `hero-imagegen-source.png`. The gallery continues to use the workshop
+  original. The photo and copy align vertically on wide screens. The main link
+  opens the localised services page.
 - **Design 11: Dedicated gallery.** `/galerija/` and `/en/gallery/` contain 12 supplied
   photographs: four workshop views, five equipment nameplates, and three testing or
   transport views. Main navigation, footer and the homepage provide access. Section
