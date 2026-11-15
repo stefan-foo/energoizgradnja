@@ -14,6 +14,7 @@ class Page(HTMLParser):
         self.ids = []
         self.links = []
         self.images = []
+        self.fields = {}
         self.metadata = {}
         self.alternates = {}
         self.canonical = None
@@ -49,6 +50,8 @@ class Page(HTMLParser):
         if tag == "img":
             self.images.append(attrs)
             self.links.extend(part.strip().split()[0] for part in attrs.get("srcset", "").split(",") if part.strip())
+        if tag in ("input", "select", "textarea") and "name" in attrs:
+            self.fields[attrs["name"]] = attrs
         if tag == "script" and attrs.get("type") == "application/ld+json":
             self.in_schema = True
             self.schema_text = ""
@@ -76,7 +79,7 @@ base_path = args.base_path.rstrip("/")
 output = (root / args.output).resolve()
 production = output.name == "production"
 pages = {filename.resolve(): Page(filename) for filename in output.rglob("*.html")}
-assert len(pages) == 27, f"Expected 26 content pages plus 404, got {len(pages)}"
+assert len(pages) == 29, f"Expected 28 content pages plus 404, got {len(pages)}"
 titles = set()
 descriptions = set()
 links_checked = 0
@@ -100,6 +103,8 @@ for filename, page in pages.items():
     assert description and description not in descriptions, f"{label}: missing/duplicate description"
     descriptions.add(description)
     assert page.schemas, f"{label}: missing structured data"
+    if filename.parent.name in ("kontakt", "contact"):
+        assert {name for name, field in page.fields.items() if "required" in field} == {"name", "email", "service"}, f"{label}: incorrect required inquiry fields"
     pending = filename.parent.name in pending_slugs
     pending_count += int(pending)
     expected_indexed = production and not pending
@@ -156,7 +161,7 @@ sitemap = ElementTree.parse(output / "sitemap.xml")
 locations = {node.text for node in sitemap.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc")}
 assert locations == indexable, "Sitemap and indexable pages disagree"
 if production:
-    assert len(locations) == 18, "Production must list 18 complete pages"
+    assert len(locations) == 20, "Production must list 20 complete pages"
     by_canonical = {page.canonical: page for page in pages.values() if page.canonical}
     for page in by_canonical.values():
         for target in page.alternates.values():

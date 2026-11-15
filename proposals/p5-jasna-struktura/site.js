@@ -1,6 +1,74 @@
 // Design preview only: the submit action has no delivery endpoint.
 document.documentElement.classList.add('has-js');
 
+const galleryDialog = document.querySelector('[data-gallery-dialog]');
+if (galleryDialog) {
+  const photographs = [...document.querySelectorAll('[data-gallery-image]')];
+  const stage = galleryDialog.querySelector('[data-gallery-stage]');
+  const caption = galleryDialog.querySelector('figcaption');
+  const count = galleryDialog.querySelector('[data-gallery-count]');
+  const previous = galleryDialog.querySelector('[data-gallery-previous]');
+  const next = galleryDialog.querySelector('[data-gallery-next]');
+  const zoom = galleryDialog.querySelector('[data-gallery-zoom]');
+  const english = document.documentElement.lang === 'en';
+  let current = 0;
+  let opener;
+
+  function setZoom(enlarged) {
+    galleryDialog.classList.toggle('is-zoomed', enlarged);
+    zoom.setAttribute('aria-pressed', String(enlarged));
+    zoom.textContent = enlarged ? (english ? 'Fit image' : 'Prilagodi prikaz') : (english ? 'Zoom in' : 'Uvećaj');
+    stage.scrollTop = 0;
+    stage.scrollLeft = 0;
+  }
+
+  function showPhotograph(index) {
+    current = index;
+    const link = photographs[current];
+    const image = document.createElement('img');
+    image.src = link.href;
+    image.alt = link.querySelector('img').alt;
+    stage.replaceChildren(image);
+    caption.textContent = link.closest('figure').querySelector('figcaption').textContent;
+    count.textContent = `${current + 1} / ${photographs.length}`;
+    previous.disabled = current === 0;
+    next.disabled = current === photographs.length - 1;
+    setZoom(false);
+  }
+
+  photographs.forEach((link, index) => {
+    link.addEventListener('click', event => {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      opener = link;
+      showPhotograph(index);
+      galleryDialog.showModal();
+    });
+  });
+  previous.addEventListener('click', () => showPhotograph(current - 1));
+  next.addEventListener('click', () => showPhotograph(current + 1));
+  zoom.addEventListener('click', () => setZoom(zoom.getAttribute('aria-pressed') !== 'true'));
+  galleryDialog.addEventListener('keydown', event => {
+    if (galleryDialog.classList.contains('is-zoomed') && event.target === stage) return;
+    if (event.key === 'ArrowLeft' && current > 0) {
+      event.preventDefault();
+      showPhotograph(current - 1);
+    } else if (event.key === 'ArrowRight' && current < photographs.length - 1) {
+      event.preventDefault();
+      showPhotograph(current + 1);
+    }
+  });
+  galleryDialog.addEventListener('click', event => {
+    if (event.target !== galleryDialog) return;
+    const bounds = galleryDialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) galleryDialog.close();
+  });
+  galleryDialog.addEventListener('close', () => {
+    stage.replaceChildren();
+    opener.focus({ preventScroll: true });
+  });
+}
+
 document.querySelectorAll('[data-quote]').forEach(form => {
   const english = document.documentElement.lang === 'en';
   const text = (sr, en) => english ? en : sr;
@@ -79,23 +147,11 @@ document.querySelectorAll('[data-quote]').forEach(form => {
 
 document.querySelectorAll('[data-diagram]').forEach(diagram => {
   const buttons = diagram.querySelectorAll('[data-supply]');
-  const statuses = diagram.querySelectorAll('[data-supply-status]');
-  const motion = diagram.querySelector('[data-motion]');
-  const english = document.documentElement.lang === 'en';
-  motion.addEventListener('click', () => {
-    const paused = diagram.classList.toggle('is-paused');
-    motion.textContent = paused
-      ? (english ? 'Resume animation' : 'Pokreni animaciju')
-      : (english ? 'Pause animation' : 'Zaustavi animaciju');
-  });
 
   function setSupply(state) {
     diagram.classList.toggle('is-repair', state === 'repair');
     buttons.forEach(button => {
       button.setAttribute('aria-pressed', String(button.dataset.supply === state));
-    });
-    statuses.forEach(status => {
-      status.hidden = status.dataset.supplyStatus !== state;
     });
   }
 

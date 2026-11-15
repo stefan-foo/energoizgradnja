@@ -1,8 +1,8 @@
 <figure class="diagram" data-diagram>
     <div class="diagram-top"><span>Zamensko napajanje</span><span aria-hidden="true">T1 / TZ</span></div>
-    <svg viewBox="0 0 460 428" role="img" aria-labelledby="diagram-title diagram-description">
+    <svg viewBox="0 0 460 510" role="img" aria-labelledby="diagram-title diagram-description">
       <title id="diagram-title">Vaš i zamenski transformator</title>
-      <desc id="diagram-description">Dva odvojena izvoda povezuju mrežu i pogon. U normalnom radu napaja T1; tokom remonta napaja TZ.</desc>
+      <desc id="diagram-description">Dva odvojena izvoda povezuju mrežu i pogon. U normalnom radu vaš transformator T1 napaja pogon. Tokom remonta T1 je u radionici u Nišu, a zamenski transformator TZ napaja vaš pogon.</desc>
       <g class="diagram-line live"><path d="M230 36V64M100 64H360M100 360H360M230 360V394"/></g>
       <g class="diagram-line main-path"><path d="M140 64V105M140 132V169M140 235V299M140 330V360"/><g class="main-unit"><circle cx="140" cy="192" r="23"/><circle cx="140" cy="212" r="23"/></g></g>
       <g class="diagram-line replacement-path"><path d="M320 64V105M320 132V169M320 235V299M320 330V360"/><circle cx="320" cy="192" r="23"/><circle cx="320" cy="212" r="23"/></g>
@@ -11,10 +11,16 @@
 
       <g aria-hidden="true"><path class="diagram-flow main-flow" d="M230 36V64H140V169M140 235V360H230V394"/><path class="diagram-flow replacement-flow" d="M230 36V64H320V169M320 235V360H230V394"/></g>
       <g class="diagram-label"><text x="230" y="22" text-anchor="middle">Mreža</text><text x="230" y="422" text-anchor="middle">Vaš pogon</text><text x="92" y="126">Q1</text><text x="338" y="126">Q2</text><text x="92" y="324">Q3</text><text x="338" y="324">Q4</text><text class="unit-label" x="99" y="207" text-anchor="end">T1</text><text class="unit-label" x="361" y="207">TZ</text><text class="unit-description" x="99" y="229" text-anchor="end">Vaš</text><text class="unit-description" x="361" y="229">Zamenski</text></g>
+      <g class="diagram-location" text-anchor="middle">
+        <text class="diagram-location-heading" x="120" y="465">Vaš transformator</text>
+        <text class="normal-location" x="120" y="491">Na vašoj lokaciji</text>
+        <text class="repair-location" x="120" y="491">U radionici u Nišu</text>
+        <text class="diagram-location-heading" x="340" y="465">Zamenski transformator</text>
+        <text class="normal-location" x="340" y="491">Isključen iz napajanja</text>
+        <text class="repair-location" x="340" y="491">Napaja vaš pogon</text>
+      </g>
     </svg>
     <div class="diagram-controls" role="group" aria-label="Prikaz napajanja"><button type="button" data-supply="normal" aria-pressed="true">Normalan rad</button><button type="button" data-supply="repair" aria-pressed="false">Tokom remonta</button></div>
-    <button class="diagram-motion" type="button" data-motion>Zaustavi animaciju</button>
-    <p class="diagram-status" role="status" aria-live="polite"><span data-supply-status="normal">Napajanje: vaš transformator.</span><span data-supply-status="repair" hidden>Napajanje: zamenski transformator.</span></p>
     <noscript><p class="diagram-note">Tokom remonta zamenski transformator preuzima napajanje. Prikaz iznad: normalan rad.</p></noscript>
     <figcaption>Princip zamenskog napajanja · ilustracija</figcaption>
   </figure>

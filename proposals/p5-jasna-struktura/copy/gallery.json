@@ -1,0 +1,107 @@
+[
+  {
+    "id": "radionica",
+    "title": ["Iz radionice", "Inside the workshop"],
+    "intro": ["Aktivni delovi transformatora, namotaji i izolacija.", "Transformer active parts, windings and insulation."],
+    "items": [
+      {
+        "asset": "aktivni-deo-transformatora",
+        "source": "1793837755965.jpg",
+        "width": 1600, "height": 1200,
+        "caption": ["Aktivni deo transformatora", "Transformer active part"],
+        "alt": ["Aktivni deo transformatora sa tri namotaja u radionici.", "Transformer active part with three windings in the workshop."]
+      },
+      {
+        "asset": "detalj-bakarnih-namotaja",
+        "source": "1793837756481.jpg",
+        "width": 1600, "height": 1200,
+        "caption": ["Detalj bakarnih namotaja", "Copper winding detail"],
+        "alt": ["Krupni plan bakarnih namotaja i izolacionih odstojnika.", "Close view of copper windings and insulating spacers."]
+      },
+      {
+        "asset": "namotaj-sa-izolacijom",
+        "source": "1793837756404.jpg",
+        "width": 1600, "height": 1200,
+        "caption": ["Namotaj sa izolacijom", "Winding with insulation"],
+        "alt": ["Cilindrični namotaj sa izolacijom, položen horizontalno u radionici.", "Cylindrical winding with insulation lying horizontally in the workshop."]
+      },
+      {
+        "asset": "sklop-namotaja-u-radionici",
+        "source": "IMG-5d019c66ee93fb4f9e613ac0ee805718-V.jpg",
+        "width": 1600, "height": 1200,
+        "caption": ["Sklop namotaja i magnetnog kola", "Windings and magnetic core assembly"],
+        "alt": ["Tri namotaja sa vidljivom izolacijom i limovima magnetnog kola u radionici.", "Three windings with visible insulation and magnetic core laminations in the workshop."]
+      }
+    ]
+  },
+  {
+    "id": "plocice",
+    "title": ["Natpisne pločice", "Equipment nameplates"],
+    "intro": ["Oznake i tehnički podaci na fotografisanoj opremi.", "Markings and technical data on the photographed equipment."],
+    "items": [
+      {
+        "asset": "plocica-kolektor-etra",
+        "source": "1793863051111.jpg",
+        "width": 1600, "height": 1200,
+        "caption": ["Kolektor Etra", "Kolektor Etra"],
+        "alt": ["Natpisna pločica Kolektor Etra energetskog transformatora.", "Kolektor Etra power transformer nameplate."]
+      },
+      {
+        "asset": "plocica-mf-trasformatori",
+        "source": "1793863051139.jpg",
+        "width": 1600, "height": 1200,
+        "caption": ["MF Trasformatori", "MF Trasformatori"],
+        "alt": ["Natpisna pločica MF Trasformatori sa podacima uljnog transformatora.", "MF Trasformatori nameplate with oil-filled transformer data."]
+      },
+      {
+        "asset": "plocica-minel-dinamo",
+        "source": "1793863051172.jpg",
+        "width": 1600, "height": 1200,
+        "caption": ["Minel Dinamo", "Minel Dinamo"],
+        "alt": ["Natpisna pločica Minel Dinamo energetskog transformatora.", "Minel Dinamo power transformer nameplate."]
+      },
+      {
+        "asset": "plocica-sgb",
+        "source": "1793837756037.jpg",
+        "width": 1600, "height": 2133,
+        "caption": ["Starkstrom-Gerätebau", "Starkstrom-Gerätebau"],
+        "alt": ["Natpisna pločica Starkstrom-Gerätebau sa tehničkim podacima i šemom veze.", "Starkstrom-Gerätebau nameplate with technical data and a connection diagram."]
+      },
+      {
+        "asset": "plocica-brush",
+        "source": "IMG-06ce0206d852e7d76817b8b86e38d5d3-V.jpg",
+        "width": 1600, "height": 1796,
+        "caption": ["Brush Transformers", "Brush Transformers"],
+        "alt": ["Natpisna pločica Brush Transformers sa nazivnim vrednostima i šemama.", "Brush Transformers nameplate with ratings and connection diagrams."]
+      }
+    ]
+  },
+  {
+    "id": "teren",
+    "title": ["Ispitivanje i transport", "Testing and transport"],
+    "intro": ["Merna oprema i sopstvena vozila na terenu.", "Test equipment and our own vehicles in the field."],
+    "items": [
+      {
+        "asset": "terensko-ispitivanje",
+        "source": "1793836992772.jpg",
+        "width": 1600, "height": 1200,
+        "caption": ["Merni uređaj i ispitni kablovi", "Measuring equipment and test leads"],
+        "alt": ["Merni uređaj u žutom kućištu sa priključenim ispitnim kablovima.", "Measuring instrument in a yellow case with connected test leads."]
+      },
+      {
+        "asset": "dostava-zamenskog-transformatora",
+        "source": "1793836622709.jpg",
+        "width": 1600, "height": 1200,
+        "caption": ["Transformator na platformi kamiona", "Transformer on a truck platform"],
+        "alt": ["Kamion Energoizgradnje sa transformatorom na platformi.", "Energoizgradnja truck carrying a transformer."]
+      },
+      {
+        "asset": "kamion-sa-dizalicom",
+        "source": "1793837756641.jpg",
+        "width": 1600, "height": 1200,
+        "caption": ["Kamion sa hidrauličnom dizalicom", "Truck with a hydraulic crane"],
+        "alt": ["Kamion sa podignutom hidrauličnom dizalicom pored objekta.", "Truck with its hydraulic crane raised beside a building."]
+      }
+    ]
+  }
+]

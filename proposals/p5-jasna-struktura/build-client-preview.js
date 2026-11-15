@@ -14,8 +14,8 @@ const assetIds = new Map();
 const pages = {};
 const escapeAttribute = value => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;');
 
-function embeddedAsset(filename) {
-  const mobileFile = filename.replace(/-1600\.(jpg|svg|webp)$/, '-800.$1');
+function embeddedAsset(filename, fullSize = false) {
+  const mobileFile = fullSize ? filename : filename.replace(/-1600\.(jpg|svg|webp)$/, '-800.$1');
   if (!assetIds.has(mobileFile)) {
     const mime = { '.webp': 'image/webp', '.png': 'image/png', '.svg': 'image/svg+xml', '.jpg': 'image/jpeg', '.vcf': 'text/vcard' }[path.extname(mobileFile)];
     if (!mime) throw new Error(`Unsupported preview asset: ${mobileFile}`);
@@ -43,6 +43,7 @@ for (const file of files) {
     const url = new URL(href, base);
     const target = url.pathname.slice(1);
     if (target.endsWith('.vcf')) return tag.replace(href, embeddedAsset(target));
+    if (/\.(webp|jpg|png)$/.test(target)) return tag.replace(href, embeddedAsset(target, true));
     if (!files.includes(target)) throw new Error(`Unknown preview link in ${file}: ${href}`);
     const state = new URLSearchParams({ page: target });
     if (url.hash) state.set('anchor', url.hash.slice(1));
@@ -136,12 +137,14 @@ const data = JSON.stringify({
   script: fs.readFileSync(path.join(sourceRoot, 'site.js'), 'utf8'),
 }).replaceAll('<', '\\u003c');
 const runtime = `(${startPreview.toString()})();`.replace(/<\/script/gi, '<\\/script');
+const favicon = fs.readFileSync(path.join(sourceRoot, 'assets/favicon.svg')).toString('base64');
 const output = path.resolve(sourceRoot, '../../energoizgradnja-v5-preview.html');
 fs.writeFileSync(output, `<!DOCTYPE html>
 <html lang="sr-Latn"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Energoizgradnja | v5 pregled sajta</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,${favicon}">
 <style>html, body { margin: 0; height: 100%; background: #fcfcfa; } iframe { display: block; width: 100%; height: 100vh; height: 100dvh; border: 0; } noscript { display: block; padding: 24px; font: 20px/1.5 'Times New Roman', serif; }</style>
 </head><body>
 <noscript>Za pregled svih stranica otvorite ovaj HTML fajl u pregledaču sa uključenim JavaScriptom. Open this HTML file in a browser with JavaScript enabled to view all pages.</noscript>

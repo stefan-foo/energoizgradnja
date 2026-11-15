@@ -2,6 +2,8 @@
 
 Uses the existing Pillow installation. No downloads or remote assets.
 """
+from base64 import b64encode
+import json
 from pathlib import Path
 
 from PIL import Image, ImageOps
@@ -17,6 +19,10 @@ photographs = {
     "terensko-ispitivanje": "1793836992772.jpg",
     "dostava-zamenskog-transformatora": "1793836622709.jpg",
 }
+gallery = json.loads((root / "copy/gallery.json").read_text(encoding="utf-8"))
+for section in gallery:
+    for item in section["items"]:
+        photographs[item["asset"]] = item["source"]
 
 for name, original in photographs.items():
     with Image.open(source / original) as opened:
@@ -30,4 +36,14 @@ for name, original in photographs.items():
                 assets / "share.jpg", quality=85, optimize=True
             )
 
-print("Prepared 12 responsive WebP photographs and sharing image. Tracked logo and vCard are unchanged.")
+# The circular mark occupies the first 80 pixels of the supplied 276 x 80 logo.
+# Clip the original artwork rather than redraw or distort it for the browser tab.
+logo = b64encode((assets / "logo-original.png").read_bytes()).decode("ascii")
+(assets / "favicon.svg").write_text(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 84 84">'
+    '<defs><clipPath id="mark"><rect width="80" height="80"/></clipPath></defs>'
+    f'<image width="276" height="80" clip-path="url(#mark)" href="data:image/png;base64,{logo}"/>'
+    '</svg>\n', encoding="utf-8"
+)
+
+print(f"Prepared {len(photographs) * 3} responsive WebP photographs, sharing image and circular-logo favicon.")
