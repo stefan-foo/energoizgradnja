@@ -124,9 +124,9 @@ BreadcrumbList JSON-LD, content-hashed styles/scripts and 18 complete localized 
 entries. The eight preparation pages remain noindex and outside alternate clusters.
 Preview exports are noindex and do not assume a production domain.
 
-**Risk 1: Launch integration.** No real domain was assumed and nothing was deployed.
-Hosting must supply real HTTP 404s, redirects, headers and caching. Live indexing,
-Search Console and field performance require verification after launch.
+**Risk 1: Hosting verification.** GitHub Pages is configured through the repository
+workflow. No custom company domain is assumed. Live indexing, Search Console and
+field performance require verification after launch.
 
 **Risk 2: Form delivery.** This revision changes the presentation. No backend endpoint
 has been configured. Client validation is functional; a submit does not send data or
@@ -170,6 +170,6 @@ engineering note is kept here, outside the customer-facing design.
 - Five malformed base paths were rejected before export.
 - Preview and standalone builds passed after restoring the services chevron.
 - Browser verification confirmed centered mobile flags and all ten dropdown links.
-- Administrator access was verified through the Git credential helper. Pages
-  activation was rejected because the current plan does not support this private
-  repository. Visibility, push and deployment await the owner’s choice.
+- The owner approved public visibility, push and deployment. The repository is
+  public and Pages is enabled with GitHub Actions. Workflow runs record deployment
+  status and the published commit.

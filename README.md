@@ -73,19 +73,16 @@ Do not make the repository public automatically. See
 
 ## Current setup status
 
-As of 2026-11-15: the local repository and `origin` are configured, and both root
-and project-path builds pass local checks. The remote is empty and private, and
-administrator access was verified using the existing Git credential helper.
+The repository is public with the owner's approval, and GitHub Pages is configured
+to use GitHub Actions. The website URL is
+<https://stefan-foo.github.io/energoizgradnja/>. The
+[Actions runs](https://github.com/stefan-foo/energoizgradnja/actions/workflows/pages.yml)
+show the current deployment status and the commit that was published.
 
-GitHub rejected Pages activation with HTTP 422: “Your current plan does not support
-GitHub Pages for this repository.” To use GitHub Pages, the owner must choose either
-a public repository or a plan that supports Pages for private repositories. The
-repository visibility has not been changed. No push or deployment has been performed.
-
-Validation also passed from a clean export of the staged Git files, proving that
-the deployable site does not depend on ignored documents, photographs or old
-proposals. The workflow YAML parses, all action references use full commit pins,
-and the staged source passes Git whitespace checks.
+Root and project-path builds pass local checks. Validation also passed from a clean
+export of the staged Git files, proving that the deployable site does not depend on
+ignored documents, photographs or old proposals. The workflow YAML parses, all action
+references use full commit pins, and the source passes Git whitespace checks.
 
 The contact form retains its current client validation but has no delivery endpoint.
 GitHub Pages hosts static content; mail delivery needs a separately configured
