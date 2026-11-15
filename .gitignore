@@ -1,0 +1,19 @@
+# Keep the repository limited to the maintained website and deployment files.
+/*
+!/.gitignore
+!/.gitattributes
+!/.github/
+!/README.md
+!/DEPENDENCIES.md
+!/proposals/
+
+/proposals/*
+!/proposals/p5-jasna-struktura/
+/proposals/p5-jasna-struktura/dist/
+/proposals/p5-jasna-struktura/production/
+/proposals/p5-jasna-struktura/review/
+/proposals/p5-jasna-struktura/__pycache__/
+/proposals/p5-jasna-struktura/*.log
+
+# Superseded generated photograph, not referenced by v5.
+/proposals/p5-jasna-struktura/assets/kamion-sa-transformatorom-*.webp

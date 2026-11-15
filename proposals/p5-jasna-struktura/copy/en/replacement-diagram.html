@@ -1,0 +1,20 @@
+<figure class="diagram" data-diagram>
+    <div class="diagram-top"><span>Replacement supply</span><span aria-hidden="true">T1 / TZ</span></div>
+    <svg viewBox="0 0 460 428" role="img" aria-labelledby="diagram-title diagram-description">
+      <title id="diagram-title">Your transformer and its replacement</title>
+      <desc id="diagram-description">Two separate branches connect the network and the plant. T1 supplies the plant in normal operation; TZ supplies it during repair.</desc>
+      <g class="diagram-line live"><path d="M230 36V64M100 64H360M100 360H360M230 360V394"/></g>
+      <g class="diagram-line main-path"><path d="M140 64V105M140 132V169M140 235V299M140 330V360"/><g class="main-unit"><circle cx="140" cy="192" r="23"/><circle cx="140" cy="212" r="23"/></g></g>
+      <g class="diagram-line replacement-path"><path d="M320 64V105M320 132V169M320 235V299M320 330V360"/><circle cx="320" cy="192" r="23"/><circle cx="320" cy="212" r="23"/></g>
+      <g class="diagram-line main-path"><path d="M133 105h14M133 299h14"/><path class="switch main-switch" d="M140 132V105"/><path class="switch main-switch" d="M140 330V299"/></g>
+      <g class="diagram-line replacement-path"><path d="M313 105h14M313 299h14"/><path class="switch replacement-switch" d="M320 132V105"/><path class="switch replacement-switch" d="M320 330V299"/></g>
+
+      <g aria-hidden="true"><path class="diagram-flow main-flow" d="M230 36V64H140V169M140 235V360H230V394"/><path class="diagram-flow replacement-flow" d="M230 36V64H320V169M320 235V360H230V394"/></g>
+      <g class="diagram-label"><text x="230" y="22" text-anchor="middle">Network</text><text x="230" y="422" text-anchor="middle">Your plant</text><text x="92" y="126">Q1</text><text x="338" y="126">Q2</text><text x="92" y="324">Q3</text><text x="338" y="324">Q4</text><text class="unit-label" x="99" y="207" text-anchor="end">T1</text><text class="unit-label" x="361" y="207">TZ</text><text class="unit-description" x="99" y="229" text-anchor="end">Yours</text><text class="unit-description" x="361" y="229">Replacement</text></g>
+    </svg>
+    <div class="diagram-controls" role="group" aria-label="Supply view"><button type="button" data-supply="normal" aria-pressed="true">Normal operation</button><button type="button" data-supply="repair" aria-pressed="false">During repair</button></div>
+    <button class="diagram-motion" type="button" data-motion>Pause animation</button>
+    <p class="diagram-status" role="status" aria-live="polite"><span data-supply-status="normal">Supply: your transformer.</span><span data-supply-status="repair" hidden>Supply: replacement transformer.</span></p>
+    <noscript><p class="diagram-note">During repair, a replacement transformer supplies the plant. The diagram above shows normal operation.</p></noscript>
+    <figcaption>Replacement supply concept · illustration</figcaption>
+  </figure>

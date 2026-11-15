@@ -1,0 +1,224 @@
+[
+  {
+    "id": "testing",
+    "formValue": "ispitivanje",
+    "sr": "ispitivanje-i-odrzavanje",
+    "en": "testing-and-maintenance",
+    "name": [
+      "Ispitivanje i održavanje",
+      "Testing and maintenance"
+    ],
+    "heading": [
+      "Ispitivanje i održavanje transformatora i transformatorskih stanica",
+      "Transformer and substation testing and maintenance"
+    ],
+    "title": [
+      "Ispitivanje transformatora | Energoizgradnja Niš",
+      "Transformer testing | Energoizgradnja, Niš"
+    ],
+    "copy": [
+      "Merenja, ispitivanja, pregledi i revizije do 35 kV. Termovizija, čišćenje i održavanje, organizacija isključenja, izveštaji i ispitni listovi.",
+      "Measurements, testing and inspections up to 35 kV. Thermal imaging, cleaning, maintenance, outage coordination, reports and test certificates."
+    ],
+    "highlights": [
+      "Na lokaciji: otpornost namotaja, prenosni odnos, sprežni broj i ispitivanje ulja. Pregledi i revizije 24/365.",
+      "On site: winding resistance, transformation ratio, vector group and oil testing. Inspections and detailed checks 24/365."
+    ]
+  },
+  {
+    "id": "repair",
+    "formValue": "remont",
+    "sr": "remont-transformatora",
+    "en": "transformer-repair",
+    "name": [
+      "Remont transformatora i stanica",
+      "Transformer and substation repair"
+    ],
+    "heading": [
+      "Remont transformatora do 35 kV",
+      "Transformer repair up to 35 kV"
+    ],
+    "title": [
+      "Remont transformatora do 35 kV | Energoizgradnja Niš",
+      "Transformer repair up to 35 kV | Energoizgradnja"
+    ],
+    "copy": [
+      "Remont energetskih transformatora i transformatorskih stanica. Specijalizacija za energetske i specijalne transformatore do 35 kV.",
+      "Repair of power transformers and substations. Specialisation in power and special-purpose transformers rated up to 35 kV."
+    ],
+    "highlights": [
+      "Detaljno merenje i ispitivanje u radionici pre remonta. Tronamotajni i višenamotajni transformatori, više sprega i regulacija pod opterećenjem.",
+      "Detailed workshop measurements and testing before repair. Three- and multi-winding transformers, multiple vector groups and on-load voltage regulation."
+    ]
+  },
+  {
+    "id": "substations",
+    "formValue": "stanice",
+    "sr": "transformatorske-stanice",
+    "en": "substations",
+    "name": [
+      "Izgradnja i rekonstrukcija stanica",
+      "Substation construction and refurbishment"
+    ],
+    "heading": [
+      "Izgradnja i rekonstrukcija transformatorskih stanica",
+      "Substation construction and refurbishment"
+    ],
+    "title": [
+      "Transformatorske stanice | Energoizgradnja Niš",
+      "Transformer substations | Energoizgradnja, Niš"
+    ],
+    "copy": [
+      "Izgradnja novih i rekonstrukcija postojećih transformatorskih stanica.",
+      "Construction of new transformer substations and refurbishment of existing substations."
+    ],
+    "pending": true
+  },
+  {
+    "id": "parts",
+    "formValue": "delovi",
+    "sr": "delovi-i-oprema",
+    "en": "parts-and-equipment",
+    "name": [
+      "Delovi i oprema",
+      "Parts and equipment"
+    ],
+    "heading": [
+      "Delovi i oprema za transformatore",
+      "Transformer parts and equipment"
+    ],
+    "title": [
+      "Delovi za transformatore | Energoizgradnja Niš",
+      "Transformer parts and equipment | Energoizgradnja"
+    ],
+    "copy": [
+      "Nabavka, prodaja, isporuka i ugradnja delova i opreme za transformatore i transformatorske stanice.",
+      "Sourcing, sale, delivery and installation of parts and equipment for transformers and transformer substations."
+    ],
+    "highlights": [
+      "Buholc releji, termostati i termostati sa Modbus RS485.",
+      "Buchholz relays, thermostats and thermostats with Modbus RS485."
+    ]
+  },
+  {
+    "id": "replacement",
+    "formValue": "zamenski",
+    "sr": "zamenski-transformator",
+    "en": "replacement-transformer",
+    "name": [
+      "Remont uz zamenski transformator",
+      "Repair with a replacement transformer"
+    ],
+    "heading": [
+      "Remont uz zamenski transformator",
+      "Repair with a replacement transformer"
+    ],
+    "title": [
+      "Zamenski transformator | Energoizgradnja Niš",
+      "Replacement transformer | Energoizgradnja, Niš"
+    ],
+    "copy": [
+      "Zamenski transformator ili kompletna zamenska transformatorska stanica tokom remonta vašeg transformatora ili stanice. Sopstvena logistika i vozila.",
+      "A replacement transformer or complete replacement substation while your transformer or substation is being repaired. Our own logistics and vehicles."
+    ],
+    "highlights": [
+      "250, 400, 630, 1000 i 1600 kVA; 2 × 630 kVA za paralelan rad; 2500 kVA naponskog nivoa 35 kV. Prilagođavanje na lokaciji.",
+      "250, 400, 630, 1000 and 1600 kVA; 2 × 630 kVA for parallel operation; 2500 kVA rated at 35 kV. On-site adaptation."
+    ]
+  },
+  {
+    "id": "networks",
+    "formValue": "mreze",
+    "sr": "napojne-mreze",
+    "en": "power-networks",
+    "name": [
+      "Srednjenaponske napojne mreže",
+      "Medium-voltage supply networks"
+    ],
+    "heading": [
+      "Srednjenaponske napojne mreže",
+      "Medium-voltage supply networks"
+    ],
+    "title": [
+      "SN napojne mreže | Energoizgradnja Niš",
+      "MV supply networks | Energoizgradnja"
+    ],
+    "copy": [
+      "Izrada srednjenaponskih napojnih mreža, podzemnih i nadzemnih.",
+      "Construction of medium-voltage supply networks, underground and overhead."
+    ],
+    "pending": true
+  },
+  {
+    "id": "monitoring",
+    "formValue": "pracenje",
+    "sr": "pracenje-rada",
+    "en": "operational-monitoring",
+    "name": [
+      "Praćenje rada transformatora i stanica",
+      "Transformer and substation monitoring"
+    ],
+    "heading": [
+      "Praćenje rada transformatora i transformatorskih stanica",
+      "Transformer and substation operational monitoring"
+    ],
+    "title": [
+      "Praćenje rada transformatora | Energoizgradnja Niš",
+      "Transformer monitoring | Energoizgradnja, Niš"
+    ],
+    "copy": [
+      "Praćenje rada transformatora i transformatorskih stanica u realnom vremenu, uz mesečne, kvartalne ili godišnje izveštaje.",
+      "Real-time monitoring of transformer and substation operation, with monthly, quarterly or annual reports."
+    ],
+    "highlights": [
+      "Privremeno postavljanje ili trajna ugradnja analizatora. Karakteristike napajanja, harmonici i fazne razlike.",
+      "Temporary installation or permanent fitting of analysers. Supply characteristics, harmonics and phase differences."
+    ]
+  },
+  {
+    "id": "protection",
+    "formValue": "zastita",
+    "sr": "relejna-i-mikroprocesorska-zastita",
+    "en": "relay-and-microprocessor-protection",
+    "name": [
+      "Relejna i mikroprocesorska zaštita",
+      "Relay and microprocessor protection"
+    ],
+    "heading": [
+      "Izrada i popravka relejne i mikroprocesorske zaštite",
+      "Relay and microprocessor protection construction and repair"
+    ],
+    "title": [
+      "Relejna zaštita | Energoizgradnja Niš",
+      "Relay protection | Energoizgradnja, Niš"
+    ],
+    "copy": [
+      "Izrada i popravka relejne i mikroprocesorske zaštite.",
+      "Construction and repair of relay and microprocessor protection."
+    ],
+    "pending": true
+  },
+  {
+    "id": "compensation",
+    "formValue": "kompenzacija",
+    "sr": "kompenzacija-reaktivne-energije",
+    "en": "reactive-power-compensation",
+    "name": [
+      "Kompenzacija reaktivne energije",
+      "Reactive power compensation"
+    ],
+    "heading": [
+      "Kompenzacija reaktivne energije prema potrebama potrošača",
+      "Reactive power compensation to suit consumer requirements"
+    ],
+    "title": [
+      "Kompenzacija reaktivne energije | Energoizgradnja",
+      "Reactive power compensation | Energoizgradnja"
+    ],
+    "copy": [
+      "Nabavka, isporuka i ugradnja nove ili rekonstrukcija postojeće kompenzacije reaktivne energije prema potrebama potrošača.",
+      "Procurement, delivery and installation of new reactive power compensation or reconstruction of existing compensation to suit consumer requirements."
+    ],
+    "pending": true
+  }
+]
